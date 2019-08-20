@@ -3,28 +3,28 @@ $(document).ready(function() {
     event.preventDefault();
     var userNumber = parseInt($("#number-input").val());
     var numbers = [];
-    var prime = 2;
+
     for (var i = 2; i <= userNumber; i++) {
       numbers.push(i);
     }
 
 
-    for (var i = 0; prime < 8; i++) {
+
+    for (var prime = 2; prime < numbers.length; prime++) {
       var numberMultiple = [];
-      numbers.forEach(function(number) {
-        if (number % prime != 0) {
-          numberMultiple.push(number);
+      for (var i = 0; i < numbers.length; i++){
+
+        if (numbers[i] % prime != 0 || numbers[i] === prime) {
+          numberMultiple.push(numbers[i]);
         }
-      });
-      prime = numberMultiple[0];
-      console.log(prime);
-      console.log(numberMultiple);
+      }
+
+      console.log(numbers[0]);
       numbers = numberMultiple.slice();
+      console.log(prime);
       console.log(numbers);
 
     }
-
-
 
   });
 });
