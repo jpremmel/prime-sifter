@@ -8,13 +8,22 @@ $(document).ready(function() {
       numbers.push(i);
     }
 
-    var numberMultiple = [];
-    numbers.forEach(function(number) {
-      if (number % prime != 0) {
-        numberMultiple.push(number);
-      }
+
+    for (var i = 0; prime < 8; i++) {
+      var numberMultiple = [];
+      numbers.forEach(function(number) {
+        if (number % prime != 0) {
+          numberMultiple.push(number);
+        }
+      });
+      prime = numberMultiple[0];
+      console.log(prime);
       console.log(numberMultiple);
-    })
+      numbers = numberMultiple.slice();
+      console.log(numbers);
+
+    }
+
 
 
   });
