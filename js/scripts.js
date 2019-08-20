@@ -2,11 +2,20 @@ $(document).ready(function() {
   $("#input").submit(function(event) {
     event.preventDefault();
     var userNumber = parseInt($("#number-input").val());
-    var prime = [];
+    var numbers = [];
+    var prime = 2;
     for (var i = 2; i <= userNumber; i++) {
-      prime.push(i);
+      numbers.push(i);
     }
-    console.log(prime);
+
+    var numberMultiple = [];
+    numbers.forEach(function(number) {
+      if (number % prime != 0) {
+        numberMultiple.push(number);
+      }
+      console.log(numberMultiple);
+    })
+
 
   });
 });
